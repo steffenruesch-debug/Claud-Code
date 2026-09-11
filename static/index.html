@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transcript Tool</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Transcript Tool</h1>
+    <p class="sub">YouTube- oder Instagram-Reel-URL einfügen und Transkript auf Deutsch &amp; Englisch erhalten.</p>
+
+    <form id="form" class="form">
+      <input
+        id="url"
+        type="url"
+        placeholder="https://www.youtube.com/watch?v=... oder https://www.instagram.com/reel/..."
+        required
+      />
+      <button id="submit" type="submit">Transkript erstellen</button>
+    </form>
+
+    <div id="status" class="status" hidden></div>
+
+    <div id="result" class="result" hidden>
+      <div class="meta">
+        <span id="meta-title"></span>
+        <span id="meta-info" class="meta-info"></span>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-target="de">Deutsch</button>
+        <button class="tab-btn" data-target="en">Englisch</button>
+      </div>
+
+      <div class="panel active" id="panel-de">
+        <button class="copy-btn" data-target="text-de">Kopieren</button>
+        <pre id="text-de"></pre>
+      </div>
+      <div class="panel" id="panel-en">
+        <button class="copy-btn" data-target="text-en">Kopieren</button>
+        <pre id="text-en"></pre>
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
